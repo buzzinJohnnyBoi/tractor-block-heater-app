@@ -7,7 +7,8 @@ export const actionLogs = sqliteTable("action_logs", {
   action: text("action", { enum: ["on", "off"] }).notNull(),
   timestamp: integer("timestamp", { mode: "timestamp" })
     .notNull()
-    .default(sql`CURRENT_TIMESTAMP`),
+    .default(sql`(unixepoch())`),
 });
 
+export type NewActionLog = typeof actionLogs.$inferInsert;
 export type ActionLog = typeof actionLogs.$inferSelect;
