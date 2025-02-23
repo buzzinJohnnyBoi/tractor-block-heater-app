@@ -6,36 +6,24 @@ import { actionLogs, NewActionLog } from "@/server/database/schema";
 
 const blockerHeaterAddress = process.env.BLOCK_HEATER_IP;
 
-export async function ChangeStateToOff(user: string) {
-  try {
-    const response = await axios.get(`http://${blockerHeaterAddress}/L`, {
-      headers: { "Access-Control-Allow-Origin": "*" },
-    });
-    if (response.status !== 200) {
-      throw new Error("Failed to change state to off");
-    }
-    const log: NewActionLog = {
-      user,
-      action: "off",
-    };
-    await db.insert(actionLogs).values(log);
-  } catch (error) {
-    console.error(error);
-    return "An error occurred";
+export default async function ChangeState(user: string, state: "ON" | "OFF") {
+  if (!user) {
+    return "Please enter your name so big brother knows who you are";
   }
-}
-
-export async function ChangeStateToOn(user: string) {
   try {
-    const response = await axios.get(`http://${blockerHeaterAddress}/H`, {
-      headers: { "Access-Control-Allow-Origin": "*" },
-    });
+    const endpoint = state === "ON" ? "/H" : "/L";
+    const response = await axios.get(
+      `http://${blockerHeaterAddress}${endpoint}`,
+      {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      }
+    );
     if (response.status !== 200) {
-      throw new Error("Failed to change state to on");
+      throw new Error(`Failed to change state to ${state.toLowerCase()}`);
     }
     const log: NewActionLog = {
       user,
-      action: "on",
+      action: state,
     };
     await db.insert(actionLogs).values(log);
   } catch (error) {
