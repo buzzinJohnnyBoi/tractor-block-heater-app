@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@libsql/client": "^0.14.0",
+    "@types/node-cron": "^3.0.11",
     "axios": "^1.7.9",
     "drizzle-orm": "^0.39.3",
     "next": "15.1.7",
+    "node-cron": "^3.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

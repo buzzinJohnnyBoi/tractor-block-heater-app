@@ -1,3 +1,5 @@
+import AddScheduledJob from "@/ui/scheduler/add";
+import DisplayScheduledJobs from "@/ui/scheduler/display";
 import DisplayLogs from "@/ui/log/displaylog";
 import ChangeCurrentState from "@/ui/log/changeCurrentState";
 
@@ -11,6 +13,10 @@ export default async function Home() {
         Tractor Block Heater App
       </h1>
       <ChangeCurrentState currentState={currentState} />
+      <div className="border-t border-gray-300 my-6" />
+      <AddScheduledJob />
+      <DisplayScheduledJobs />
+      <div className="border-t border-gray-300 my-6" />
       <DisplayLogs />
     </div>
   );

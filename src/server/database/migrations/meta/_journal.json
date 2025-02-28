@@ -15,6 +15,20 @@
       "when": 1740259971914,
       "tag": "0001_update_timestamp_log",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1740705613647,
+      "tag": "0002_add_scheduled_jobs",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1740706163062,
+      "tag": "0003_update_jobs_add_recurring",
+      "breakpoints": true
     }
   ]
 }
