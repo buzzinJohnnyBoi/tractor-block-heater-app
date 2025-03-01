@@ -14,7 +14,7 @@ export const scheduledJobs = sqliteTable("scheduled_jobs", {
   id: integer("id").primaryKey(),
   user: text("user").notNull(),
   action: text("action", { enum: ["ON", "OFF"] }).notNull(),
-  timestamp: integer("timestamp", { mode: "timestamp" }).notNull(),
+  time: text("time").notNull().default("00:00").notNull(),
   recurring: integer("recurring", { mode: "boolean" }).notNull(),
 });
 

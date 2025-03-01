@@ -29,6 +29,13 @@
       "when": 1740706163062,
       "tag": "0003_update_jobs_add_recurring",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1740847794080,
+      "tag": "0004_update_sch_job_timestamp",
+      "breakpoints": true
     }
   ]
 }

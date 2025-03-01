@@ -1,7 +1,8 @@
-import AddScheduledJob from "@/ui/scheduler/add";
+export const dynamic = "force-dynamic";
+
 import DisplayScheduledJobs from "@/ui/scheduler/display";
 import DisplayLogs from "@/ui/log/displaylog";
-import ChangeCurrentState from "@/ui/log/changeCurrentState";
+import ChangeCurrentStateAddScheduledJob from "@/ui/log/changeCurrentState";
 
 import findCurrentState from "@/server/services/findCurrentState";
 
@@ -12,9 +13,8 @@ export default async function Home() {
       <h1 className="text-4xl text-center underline mb-6">
         Tractor Block Heater App
       </h1>
-      <ChangeCurrentState currentState={currentState} />
-      <div className="border-t border-gray-300 my-6" />
-      <AddScheduledJob />
+      <ChangeCurrentStateAddScheduledJob currentState={currentState} />
+      <div className=" my-6" />
       <DisplayScheduledJobs />
       <div className="border-t border-gray-300 my-6" />
       <DisplayLogs />

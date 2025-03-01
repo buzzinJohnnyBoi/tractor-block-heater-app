@@ -7,6 +7,7 @@ import { actionLogs, NewActionLog } from "@/server/database/schema";
 const blockerHeaterAddress = process.env.BLOCK_HEATER_IP;
 
 export default async function ChangeState(user: string, state: "ON" | "OFF") {
+  console.log("Changing state to", state);
   if (!user) {
     return "Please enter your name so big brother knows who you are";
   }
