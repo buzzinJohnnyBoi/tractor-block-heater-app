@@ -7,6 +7,7 @@ Using next 15, tailwind, drizzle orm, and sqlite, with cron for the scheduled jo
 To run:
 
 `npm ci`  
+`cp .env.example .env.local`  
 `touch database.sqlite`  
 `npx drizzle-kit migrate`  
 `npm run build`  
