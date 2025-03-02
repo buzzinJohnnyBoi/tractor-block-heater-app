@@ -5,16 +5,10 @@ import { scheduledJobs } from "@/server/database/schema";
 export default async function findScheduledJobsToRun() {
   const currentTimeString = findCurrentTime();
 
-  const allJobs = await db
+  return await db
     .select()
     .from(scheduledJobs)
     .where(eq(scheduledJobs.time, currentTimeString));
-
-  const overdueJobs = allJobs.filter((job) => {
-    return job.time < currentTimeString;
-  });
-
-  return overdueJobs;
 }
 
 function findCurrentTime() {
