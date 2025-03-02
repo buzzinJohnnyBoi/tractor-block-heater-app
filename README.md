@@ -12,3 +12,6 @@ To run:
 `npx drizzle-kit migrate`  
 `npm run build`  
 `npm start`
+
+![image](https://github.com/user-attachments/assets/1c1bedc0-9c52-4b04-a064-371978ccd43b)
+
